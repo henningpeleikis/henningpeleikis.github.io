@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Henning Peleikis · CV</title>
+<meta name="description" content="Henning Peleikis: senior research consultant at Gallup and IE University graduate in Business Analytics & Data Science, building AI agents, data pipelines and ML models.">
+<meta property="og:title" content="Henning Peleikis · CV">
+<meta property="og:description" content="Research, data & AI. Gallup, IE University, Berlin.">
+<meta name="theme-color" content="#0504AA">
+<link rel="preload" href="fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Schibsted Grotesk";src:url("fonts/schibsted-grotesk-latin-wght-normal.woff2") format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url("fonts/schibsted-grotesk-latin-wght-italic.woff2") format("woff2");font-weight:400 900;font-style:italic;font-display:swap}
+
+:root{
+  --paper:#F6F7FD;
+  --white:#FFFFFF;
+  --ink:#12132E;
+  --petrol:#0504AA;
+  --deep:#03027A;
+  --muted:#55587E;
+  --line:#CDD0EF;
+  --sage:#E4E5FB;
+  --mist:#BFC1F7;
+  --signal:#E0A43A;
+  --measure:70ch;
+}
+*{box-sizing:border-box}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,sans-serif;line-height:1.5}
+a{color:var(--petrol);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+
+/* =========================================================
+   HERO BAND
+   ========================================================= */
+.band{background:var(--petrol);color:var(--paper);position:relative;overflow:hidden}
+.band::before{ /* faint survey-grid texture: a nod to research data */
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
+  background-image:radial-gradient(circle,var(--paper) 1.2px,transparent 1.6px);
+  background-size:22px 22px}
+.band a{color:var(--paper)}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;padding:76px 0 44px;align-items:end}
+.hero h1{font-size:clamp(2.9rem,6.2vw,5.1rem);line-height:.9;letter-spacing:-.035em;font-weight:800;margin:0}
+.hero h1 span{display:block;font-weight:400;font-style:italic;color:var(--mist)}
+.pitch{max-width:46ch;font-size:1.25rem;line-height:1.42;margin:26px 0 0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1.5px solid var(--mist);border-radius:999px;text-decoration:none;font-weight:600}
+.btn svg{width:16px;height:16px;flex:none}
+.btn.primary{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+.band .btn.primary{color:var(--ink)}
+.btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.band .btn:hover{color:var(--ink)}
+
+
+.hero-langs{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:18px 0 0;padding:0}
+.hero-langs li{font-size:.85rem;padding:5px 11px;border-radius:999px;border:1px solid rgba(245,248,248,.35);color:var(--mist)}
+.hero-langs b{color:var(--paper);font-weight:650;margin-right:4px}
+
+/* numbers panel */
+.numbers{margin:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(245,248,248,.25)}
+.numbers div{padding:16px 0 14px;border-bottom:1px solid rgba(245,248,248,.25)}
+.numbers div:nth-child(odd){padding-right:16px;border-right:1px solid rgba(245,248,248,.25)}
+.numbers div:nth-child(even){padding-left:20px}
+.numbers dt{font-size:2.4rem;line-height:1;font-weight:750;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.numbers dd{margin:6px 0 0;color:var(--mist);font-size:.92rem;line-height:1.3}
+
+/* timeline inside the band */
+.strip{position:relative;margin:0;padding:24px 0 34px;border-top:1px solid rgba(245,248,248,.25)}
+.strip figcaption{font-size:.95rem;font-weight:650;margin:0 0 14px;color:var(--mist)}
+.lane{display:grid;grid-template-columns:72px 1fr;align-items:center;margin-bottom:8px}
+.lane .name{font-size:.85rem;color:var(--mist)}
+.track{position:relative;height:38px;background:repeating-linear-gradient(90deg,rgba(245,248,248,.18) 0 1px,transparent 1px calc(100% / 12))}
+.seg{position:absolute;top:4px;bottom:4px;border-radius:6px;background:#2524BC;border:1px solid #5352D6;font-size:.8rem;line-height:1.1;padding:0 9px;display:flex;align-items:center;white-space:nowrap;overflow:hidden;color:var(--paper)}
+.seg.key{background:var(--paper);border-color:var(--paper);color:var(--petrol);font-weight:700}
+.seg.fade{border-left:0;border-radius:0 6px 6px 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40%);mask-image:linear-gradient(90deg,transparent 0,#000 40%);justify-content:flex-end}
+.seg.mini{padding:0;justify-content:center;font-size:.62rem}
+.seg.now{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+.years{display:grid;grid-template-columns:72px 1fr}
+.years ol{min-width:0;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(12,1fr);font-size:.75rem;color:var(--mist)}
+.years li{padding-left:4px;min-width:0;overflow:hidden}
+
+
+/* timeline v2: two-line labels, inside or beside the bar */
+.lane{grid-template-columns:84px 1fr}
+.years{grid-template-columns:84px 1fr}
+.track{height:46px}
+.seg{overflow:visible;padding:0}
+.seg .lbl{position:absolute;top:50%;transform:translateY(-50%);left:10px;display:flex;flex-direction:column;line-height:1.15;white-space:nowrap;pointer-events:none}
+.seg .lbl b{font-size:.78rem;font-weight:700}
+.seg .lbl small{font-size:.68rem;opacity:.85}
+.seg .lbl.after{left:calc(100% + 8px)}
+.seg .lbl.before{left:auto;right:calc(100% + 10px);text-align:right;align-items:flex-end}
+.seg.key .lbl.before,.seg.key .lbl.after{color:var(--paper)}
+.seg.fade{background:linear-gradient(90deg,transparent 0,#2524BC 55%);border:0;border-radius:0 6px 6px 0;-webkit-mask-image:none;mask-image:none}
+.seg.fade .lbl.after{left:calc(100% + 8px)}
+.tl-list{display:none;list-style:none;margin:6px 0 0;padding:0;font-size:.85rem}
+.tl-list li{display:grid;grid-template-columns:100px 1fr;gap:10px;padding:7px 0;border-bottom:1px solid rgba(245,248,248,.2)}
+.tl-list li{border-left:4px solid transparent;padding-left:10px}
+.tl-list li.c-edu{border-left-color:#F4F6FF}.tl-list li.c-abroad{border-left-color:#3DD68C}.tl-list li.c-work{border-left-color:#F2B23A}.tl-list li.c-found{border-left-color:#35C6EA}
+.tl-list span{color:var(--mist);font-variant-numeric:tabular-nums}
+@media screen and (max-width:760px){
+  .chart{display:none}
+  .tl-list{display:block}
+}
+
+
+/* category colours (Gantt) */
+.seg.c-edu{background:#F4F6FF;border-color:#F4F6FF;color:#0504AA}
+.seg.c-abroad{background:#3DD68C;border-color:#3DD68C;color:#062A1A}
+.seg.c-work{background:#F2B23A;border-color:#F2B23A;color:#2A1A00}
+.seg.c-found{background:#35C6EA;border-color:#35C6EA;color:#03263A}
+.seg.c-edu.fade{background:linear-gradient(90deg,transparent 0,#F4F6FF 55%)}
+.seg .lbl.before,.seg .lbl.after{color:var(--paper)!important}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:14px 0 0 84px;padding:0;list-style:none;font-size:.8rem;color:var(--mist)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* =========================================================
+   BODY
+   ========================================================= */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:64px;padding:56px 0 72px}
+section{margin-bottom:60px}
+section > h2{font-size:1.8rem;letter-spacing:-.02em;font-weight:780;margin:0 0 22px;display:flex;align-items:baseline;gap:14px}
+section > h2::after{content:"";flex:1;height:2px;background:var(--ink);transform:translateY(-6px)}
+
+/* featured builds: two large panels */
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:26px}
+.feature{background:var(--white);border:1px solid var(--line);border-top:6px solid var(--petrol);border-radius:4px 4px 10px 10px;padding:22px 22px 20px;display:flex;flex-direction:column}
+.feature.award{border-top-color:var(--signal)}
+.feature .big{font-size:2.6rem;line-height:1;font-weight:800;letter-spacing:-.03em;color:var(--petrol)}
+.feature.award .big{font-size:1.5rem;line-height:1.15;color:var(--ink)}
+.feature .big small{display:block;font-size:.85rem;font-weight:550;letter-spacing:0;color:var(--muted);margin-top:6px}
+.feature h3{font-size:1.2rem;margin:18px 0 6px;line-height:1.25}
+.feature p{margin:0 0 12px}
+.feature .tags{margin-top:auto}
+
+
+.feature.role .big{font-size:1.5rem;line-height:1.15;color:var(--ink)}
+.points{margin:0 0 14px;padding-left:1.1em}
+.points li{margin:5px 0}
+.points li::marker{color:var(--petrol)}
+
+/* tags (skills, stacks) */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{font-size:.8rem;line-height:1;padding:6px 9px;border-radius:999px;background:var(--sage);color:var(--deep)}
+
+/* master's projects: two-column summary list */
+.projects{list-style:none;margin:0;padding:0}
+.projects{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
+.projects li{padding:14px 0;border-bottom:1px solid var(--line)}
+.sub{font-size:1.05rem;font-weight:720;margin:30px 0 2px}
+.projects a.title{font-weight:700;font-size:1.06rem;color:var(--ink);text-decoration:none}
+.projects a.title:hover{color:var(--petrol);text-decoration:underline}
+.projects p{margin:3px 0 0;color:var(--muted)}
+.also{color:var(--muted);font-size:.92rem;margin:14px 0 0}
+
+/* experience / education entries */
+.entry{display:grid;grid-template-columns:136px minmax(0,1fr);gap:22px;padding:18px 0;border-bottom:1px solid var(--line);position:relative}
+.entry:last-child{border-bottom:0}
+.when{font-size:.88rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:4px}
+.entry h3{font-size:1.2rem;font-weight:720;margin:0;line-height:1.25}
+.entry .org{margin:2px 0 8px;color:var(--petrol);font-weight:560}
+.entry ul{margin:0;padding-left:1.1em;max-width:var(--measure)}
+.entry li{margin:5px 0}
+.entry li::marker{color:var(--petrol)}
+.entry p{margin:6px 0;max-width:var(--measure)}
+.entry.current .when{color:var(--ink);font-weight:650}
+.entry.current .when::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--signal);margin-right:7px;vertical-align:1px}
+
+/* aside */
+aside{font-size:.95rem}
+.sticky{position:sticky;top:24px}
+aside .block{margin-bottom:34px}
+aside h2{font-size:1.05rem;font-weight:760;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+aside h3{font-size:.9rem;font-weight:680;margin:16px 0 8px;color:var(--petrol)}
+aside h3:first-of-type{margin-top:0}
+.langs{list-style:none;padding:0;margin:0}
+.langs small{display:block;color:var(--muted);font-size:.8rem}
+.langs li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.langs li:last-child{border-bottom:0}
+.dots{display:inline-flex;gap:4px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--petrol)}
+.links{list-style:none;padding:0;margin:0}
+.links li{padding:6px 0}
+.advisory{margin:0;color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.85rem}
+.print-only{display:none}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media screen and (max-width:960px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:56px}
+  .grid{grid-template-columns:1fr;gap:0}
+  .sticky{position:static}
+  aside{order:-1;margin-bottom:28px}
+}
+@media screen and (max-width:640px){
+  .wrap{padding:0 20px}
+  .featured{grid-template-columns:1fr}
+  .entry{grid-template-columns:1fr;gap:4px}
+  .projects{grid-template-columns:1fr}
+  .lane,.years{grid-template-columns:46px 1fr}
+  .seg{font-size:0;padding:0}
+  .seg.now{font-size:.6rem;padding:0 4px}
+  .seg.tiny{font-size:0!important;padding:0}
+  .years ol{font-size:.6rem}
+  .years ol li:nth-child(even){color:transparent}
+  .numbers dt{font-size:1.9rem}
+}
+
+/* one orchestrated entrance: the timeline draws itself */
+@media (prefers-reduced-motion:no-preference){
+  .seg{transform-origin:left;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
+  .lane:nth-child(2) .seg{animation-delay:.15s}
+  .lane:nth-child(3) .seg{animation-delay:.3s}
+  @keyframes grow{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+}
+
+/* =========================================================
+   PRINT / PDF (2 pages A4)
+   ========================================================= */
+@page{size:A4;margin:11mm 12mm}
+@media print{
+  html{font-size:8.9pt}
+  body{background:#fff;line-height:1.36}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding:0}
+  .band{background:#fff;color:var(--ink)}
+  .band::before,.actions,.no-print,footer{display:none!important}
+  .band a{color:var(--ink)}
+  .hero{grid-template-columns:1fr;gap:3mm;padding:0 0 3mm}
+  .hero h1{font-size:25pt;color:var(--petrol)}
+  .hero h1 span{display:inline;color:var(--ink)}
+  .pitch{font-size:11pt;max-width:none;margin-top:2.5mm}
+  .hero-langs{display:none}
+  .langs small{display:inline;font-size:7.5pt;margin-left:3px}
+  .print-only{display:block;margin:1.5mm 0 0;color:var(--muted)}
+  .numbers{grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line)}
+  .numbers div,.numbers div:nth-child(odd),.numbers div:nth-child(even){padding:2mm 3mm 2mm 0;border:0;border-bottom:1px solid var(--line)}
+  .numbers dt{font-size:15pt;color:var(--petrol)}
+  .numbers dd{color:var(--muted);font-size:8pt;margin-top:1mm}
+  .strip{padding:2.5mm 0 2mm;border-top:0}
+  .strip figcaption{color:var(--ink);margin-bottom:2mm}
+  .lane{margin-bottom:2px}.lane .name{color:var(--muted)}
+  .track{height:17px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100% / 12))}
+  .seg{animation:none!important;font-size:6.6pt;padding:0 4px;top:2px;bottom:2px;background:var(--sage);border-color:var(--line);color:var(--ink)}
+  .seg.key{background:var(--petrol);border-color:var(--petrol);color:#fff}
+  .seg.now{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+  .years ol{color:var(--muted)}
+  .seg.c-edu{background:#DCE0FA;border-color:#C6CBF3;color:#0504AA}
+  .seg.c-edu.fade{background:linear-gradient(90deg,#fff 0,#DCE0FA 55%)}
+  .seg .lbl.before,.seg .lbl.after{color:var(--ink)!important}
+  .legend{display:none}
+
+  .tl-list{display:none!important}
+  .chart{display:block!important}
+  .lane,.years{grid-template-columns:18mm 1fr}
+  .track{height:23px}
+  .seg{padding:0}
+  .seg .lbl{left:5px}
+  .seg .lbl.after{left:calc(100% + 4px)}
+  .seg .lbl.before{right:calc(100% + 4px)}
+  .seg.fade .lbl.after{left:calc(100% + 4px)}
+  .seg .lbl{line-height:1.05}
+  .seg .lbl b{font-size:6pt}
+  .seg .lbl small{font-size:5.3pt}
+  .seg.fade{background:linear-gradient(90deg,#fff 0,var(--sage) 55%)}
+  .seg.key .lbl.before{color:var(--ink)}
+
+  .grid{display:flex;flex-direction:column;gap:0;padding:3mm 0 0}
+  aside{order:-1;margin-bottom:2mm}
+  .sticky{position:static;display:grid;grid-template-columns:4fr 1.1fr;gap:8mm}
+  aside .block{margin-bottom:2mm}
+  aside .links-block{display:none}
+  aside h2{font-size:11pt;margin-bottom:2mm;padding-bottom:1.2mm}
+  .skillgrid{display:grid;grid-template-columns:20mm 1fr;gap:1.2mm 3mm;align-items:baseline}
+  aside h3{margin:0!important;font-size:8.6pt;color:var(--ink)}
+  .tags{gap:0}
+  .tags li{background:none;padding:0;font-size:8.6pt;color:var(--ink);border-radius:0}
+  .tags li:not(:last-child)::after{content:",\00a0"}
+  .feature .tags li{font-size:8pt;color:var(--muted)}
+  .langs li{padding:1mm 0}
+  main{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto}
+  #education .entry:last-child{padding-bottom:0}
+  .grid,main,section:last-of-type{margin-bottom:0!important;padding-bottom:0!important}
+  #experience{order:1} #builds{order:2} #education{order:3}
+  section{margin-bottom:4mm}
+  section > h2{font-size:12.5pt;margin:0 0 2mm;break-after:avoid}
+  section > h2::after{height:1.5px;transform:translateY(-3px)}
+  .entry{grid-template-columns:23mm minmax(0,1fr);gap:4mm;padding:1.8mm 0}
+  .entry h3{font-size:10.3pt;break-after:avoid}
+  .entry li{margin:1.5px 0}
+  .entry ul,.entry p,.projects p{max-width:none}
+  .featured{gap:4mm;margin-bottom:2mm}
+  .feature{padding:2.5mm 3mm;border-top-width:3px;break-inside:avoid}
+  .feature .big{font-size:16pt}
+  .feature.award .big{font-size:11pt}
+  .feature.role{display:none}
+  .featured{grid-template-columns:1fr}
+  .feature.role .big{font-size:11pt}
+  .points{margin-bottom:1mm}
+  .points li{margin:0.6mm 0}
+
+  .feature h3{margin:1.5mm 0 1mm;font-size:10pt}
+  .feature p{margin-bottom:1mm}
+  .projects li{padding:1.4mm 0;break-inside:avoid}
+  .projects{column-gap:6mm}
+  .sub{font-size:10pt;margin:2mm 0 0}
+  .projects p{font-size:8.3pt;color:var(--muted);margin:0.3mm 0 0}
+  .also{display:none}
+  a{text-decoration:none;color:var(--ink)}
+}
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <h1>Henning Peleikis <span>research, data &amp; AI</span></h1>
+        <p class="pitch">Trusted advisor to senior HR and business leaders. For more than five years at Gallup I have owned enterprise accounts, run workshops and trained client teams, turning people data into decisions. I also build AI agents, data pipelines and models, most recently in my Master's at IE University.</p>
+        <ul class="hero-langs" aria-label="Languages">
+          <li><b>German</b> native</li><li><b>English</b> business fluent</li><li><b>Spanish</b> basic</li>
+        </ul>
+        <p class="print-only">Berlin · linkedin.com/in/henning-peleikis · online CV: henningpeleikis.github.io</p>
+        <div class="actions">
+          <a class="btn primary" href="cv.pdf" download>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 14h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download PDF</a>
+          <a class="btn" href="https://www.linkedin.com/in/henning-peleikis/">LinkedIn</a>
+        </div>
+      </div>
+      <dl class="numbers">
+        <div><dt>5+ yrs</dt><dd>at Gallup, now Senior Research Consultant</dd></div>
+        <div><dt>€2M+</dt><dd>yearly revenue across my enterprise accounts</dd></div>
+        <div><dt>15+</dt><dd>clients served since 2021</dd></div>
+        <div><dt>100+</dt><dd>managers and HR users trained each year</dd></div>
+        <div><dt>3.71</dt><dd>GPA, Master in Business Analytics &amp; Data Science, IE University</dd></div>
+        <div><dt>3.8</dt><dd>GPA, BSc Business Psychology, Hochschule Fresenius</dd></div>
+      </dl>
+    </header>
+
+    <figure class="strip" aria-labelledby="strip-title">
+      <figcaption id="strip-title">Work and study at a glance</figcaption>
+      <div class="chart" aria-hidden="true">
+        <!-- axis: Jan 2015 – Dec 2026 (12 years); left = (date - 2015) / 12 -->
+        <div class="lane"><span class="name">Education</span>
+          <div class="track">
+            <span class="seg c-edu fade" style="left:0%;width:12.5%" title="Abitur, Marie-Curie-Gymnasium (2010–2016)"><span class="lbl after"><b>Abitur</b><small>Marie-Curie-Gymnasium</small></span></span>
+            <span class="seg c-edu" style="left:26.4%;width:24.3%" title="BSc Business Psychology, Hochschule Fresenius (03/2018–02/2021)"><span class="lbl"><b>BSc Business Psychology</b><small>Hochschule Fresenius</small></span></span>
+            <span class="seg c-edu" style="left:84%;width:11.8%" title="Master in Business Analytics &amp; Data Science, IE University (02/2025–07/2026)"><span class="lbl before"><b>Master in Business Analytics &amp; Data Science</b><small>IE University</small></span></span>
+          </div>
+        </div>
+        <div class="lane"><span class="name">Abroad</span>
+          <div class="track">
+            <span class="seg c-abroad" style="left:15.3%;width:7%" title="Work and travel year, mainly New Zealand (11/2016–09/2017)"><span class="lbl after"><b>Work &amp; Travel</b><small>New Zealand</small></span></span>
+            <span class="seg c-abroad" style="left:42.4%;width:4.2%" title="Semester abroad, University of Technology Sydney (02–08/2020)"><span class="lbl after"><b>Semester Abroad</b><small>University of Technology Sydney</small></span></span>
+          </div>
+        </div>
+        <div class="lane"><span class="name">Work</span>
+          <div class="track">
+            <span class="seg c-work" style="left:25.7%;width:12.5%" title="Working Student, Events and E-commerce, F&amp;P Stock Solution GmbH (02/2018–08/2019)"><span class="lbl"><b>Working Student</b><small>F&amp;P Stock Solution</small></span></span>
+            <span class="seg c-work" style="left:52.1%;width:3.2%" title="Management Consulting Intern, Wdp GmbH (04–08/2021)"><span class="lbl before"><b>Management<br>Consulting Intern</b><small>Wdp GmbH</small></span></span>
+            <span class="seg c-work" style="left:55.9%;width:43.3%" title="Senior Research Consultant, Gallup (09/2021–today)"><span class="lbl"><b>Senior Research Consultant</b><small>Gallup</small></span></span>
+          </div>
+        </div>
+        <div class="lane"><span class="name">Founder</span>
+          <div class="track">
+            <span class="seg c-found" style="left:34%;width:65.2%" title="Co-Founder, Brandt &amp; Peleikis (02/2019–today)"><span class="lbl"><b>Co-Founder</b><small>Brandt &amp; Peleikis</small></span></span>
+          </div>
+        </div>
+        <div class="years"><span></span>
+          <ol><li>2015</li><li>2016</li><li>2017</li><li>2018</li><li>2019</li><li>2020</li><li>2021</li><li>2022</li><li>2023</li><li>2024</li><li>2025</li><li>2026</li></ol>
+        </div>
+      </div>
+      <ol class="tl-list">
+        <li class="c-edu"><span>2025 – 2026</span> Master in Business Analytics &amp; Data Science, IE University</li>
+        <li class="c-work"><span>2021 – today</span> Senior Research Consultant, Gallup</li>
+        <li class="c-work"><span>2021</span> Management Consulting Intern, Wdp GmbH</li>
+        <li class="c-abroad"><span>2020</span> Semester Abroad, University of Technology Sydney</li>
+        <li class="c-found"><span>2019 – today</span> Co-Founder, Brandt &amp; Peleikis</li>
+        <li class="c-edu"><span>2018 – 2021</span> BSc Business Psychology, Hochschule Fresenius</li>
+        <li class="c-work"><span>2018 – 2019</span> Working Student, F&amp;P Stock Solution</li>
+        <li class="c-abroad"><span>2016 – 2017</span> Work &amp; Travel, New Zealand</li>
+        <li class="c-edu"><span>2010 – 2016</span> Abitur, Marie-Curie-Gymnasium</li>
+      </ol>
+    </figure>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="grid">
+<main>
+
+  <section id="builds">
+    <h2>Highlights and projects</h2>
+
+    <div class="featured">
+      <article class="feature award">
+        <div class="big">Best Capstone of the Year<small>IE University, 2026</small></div>
+        <h3>Autonomous learning agent</h3>
+        <p>Corporate capstone: a LangGraph agent that turns workplace signals into cited learning nudges, deciding by itself whether to nudge, defer or skip.</p>
+        <p class="no-print">Seven-node state machine with PostgreSQL memory, Qdrant retrieval with cite-or-omit grounding, and a policy gate with tiered human approval and an audit trail.</p>
+        <ul class="tags"><li>LangGraph</li><li>RAG</li><li>Qdrant</li><li>PostgreSQL</li><li>Streamlit</li></ul>
+      </article>
+      <article class="feature role">
+        <div class="big">Senior Research Consultant<small>Gallup, Berlin · since 2021</small></div>
+        <h3>What I own today</h3>
+        <ul class="points">
+          <li>Operations and research lead on <strong>four enterprise accounts of about €500k each</strong> per year, plus smaller accounts; 15+ clients since 2021</li>
+          <li>End-to-end project delivery, aligning business, research, tech and operations on scope, budget and timelines</li>
+          <li>Client onboarding on <strong>Gallup Access</strong> (survey SaaS): survey design, reporting set-up, HRIS integrations</li>
+          <li>Training for <strong>100+ managers and HR users a year</strong>, thousands more through guides and videos</li>
+          <li>AI-supported custom solutions for clients, scaled into Gallup's main offering</li>
+        </ul>
+        <ul class="tags"><li>Account leadership</li><li>People analytics</li><li>SaaS onboarding</li><li>Data privacy</li></ul>
+      </article>
+    </div>
+
+    <h3 class="sub">Master's projects</h3>
+    <ul class="projects">
+      <li>
+        <a class="title" href="https://github.com/henningpeleikis/veritas-bureau-fake-news-detection">Multi-agent fact checker</a>
+        <p>Six AI agents check a news article's claims against live web search; 94% accurate on 100 test articles.</p>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/henningpeleikis/crypto-arbitrage-big-data-pipeline">Crypto arbitrage pipeline</a>
+        <p>Streams live exchange prices to spot arbitrage gaps and forecasts prices daily.</p>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/henningpeleikis/vision-crowd-analyzer">Vision Crowd Analyzer</a>
+        <p>Turns video into crowd counts, density levels and hotspot maps.</p>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/henningpeleikis/global-air-transport-network-analysis">Global air transport network</a>
+        <p>Models world flight routes as a network and tests what a Dubai closure would cut off.</p>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/henningpeleikis/spotify-popularity-prediction">Spotify popularity prediction</a>
+        <p>Predicts a song's popularity at release from its audio features.</p>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/henningpeleikis/time-series-forecasting-box-jenkins">Coca-Cola earnings forecast</a>
+        <p>Seasonal time-series model forecasting quarterly earnings within 8.4% error.</p>
+      </li>
+      
+    </ul>
+    <p class="also">Also built: chatbots on local Qwen models with RAG and safety boundaries, and a document-to-podcast converter.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry current">
+      <div class="when">09/2021 – today</div>
+      <div>
+        <h3>Senior Research Consultant</h3>
+        <p class="org">Gallup, Berlin</p>
+        <ul>
+          <li>Operations and research lead on four enterprise accounts worth about €500,000 each in annual revenue, plus smaller accounts and a public research project; 15+ clients since 2021.</li>
+          <li>Run projects end to end and align business, research, technology and operations teams on scope, budget, timelines and client needs.</li>
+          <li>Lead client onboarding on Gallup Access (SaaS for surveys, reporting and action planning): survey design, reporting configuration, HRIS integrations. Train 100+ managers and HR users a year, and thousands more through guides and videos.</li>
+          <li>Assess account health from client feedback and delivery risks; support renewals, expansion and business development.</li>
+          <li>Build AI-supported custom solutions for clients and develop use cases to scale them into Gallup's main offering, such as reporting tools.</li>
+          <li>Prepare and co-facilitate senior-level workshops; handle confidential people data and data privacy (processing, retention, anonymisation) for German and European clients.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry current">
+      <div class="when">02/2019 – today</div>
+      <div>
+        <h3>Co-Founder</h3>
+        <p class="org">Brandt &amp; Peleikis, Falkensee</p>
+        <p>Own projects across business modelling, strategy, market research and online marketing.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">04 – 08/2021</div>
+      <div>
+        <h3>Management Consulting Intern</h3>
+        <p class="org">Wdp GmbH, Cologne</p>
+        <p>Research, data analysis and presentations for client projects.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">02/2018 – 08/2019</div>
+      <div>
+        <h3>Working Student, Events and E-commerce</h3>
+        <p class="org">F&amp;P Stock Solution GmbH, Falkensee</p>
+        <p>Start-up environment; designed a customer service chatbot and ran KPI analysis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="when">02/2025 – 07/2026</div>
+      <div>
+        <h3>Master's in Business Analytics &amp; Data Science</h3>
+        <p class="org">IE University, Madrid · part-time · GPA 3.71/4</p>
+        <ul>
+          <li>Advanced AI: NLP, deep learning, generative AI and intelligent agents, data governance, social network analysis.</li>
+          <li>Big data: Apache Spark, Kafka, NiFi, MongoDB, PostgreSQL.</li>
+          <li>Award-winning capstone and datathon project.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">03/2018 – 02/2021</div>
+      <div>
+        <h3>BSc Business Psychology</h3>
+        <p class="org">Hochschule Fresenius, Berlin and Hamburg · GPA 3.8/4 (German grade 1.2)</p>
+        <ul>
+          <li>Empirical thesis on working from home, psychological well-being and social isolation.</li>
+          <li>Student representative, project lead and mentor; Ludwig Fresenius Talent Network.</li>
+          <li>Semester abroad at the University of Technology Sydney (02–08/2020): organisational psychology and a consulting project on nonprofit growth strategy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2016 – 2017</div>
+      <div>
+        <h3>Work and travel year</h3>
+        <p class="org">Mainly New Zealand</p>
+        <p>Hospitality, farm work and volunteering.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2010 – 2016</div>
+      <div>
+        <h3>Abitur</h3>
+        <p class="org">Marie-Curie-Gymnasium, Dallgow-Döberitz · final grade 1.0</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<aside>
+  <div class="sticky">
+    <div class="block">
+      <h2>Skills</h2>
+      <div class="skillgrid">
+        <h3>AI</h3>
+        <ul class="tags"><li>LangGraph</li><li>LangChain</li><li>Multi-agent workflows</li><li>RAG (Qdrant, ChromaDB)</li><li>Prompt engineering</li><li>Ollama</li><li>Hugging Face</li><li>spaCy</li><li>YOLO11</li><li>Streamlit</li></ul>
+        <h3>Data</h3>
+        <ul class="tags"><li>SPSS</li><li>R</li><li>Tableau</li><li>Looker</li><li>Python (pandas, scikit-learn, XGBoost)</li><li>SQL</li><li>Statistics</li><li>Time series</li><li>Machine learning</li><li>NLP</li></ul>
+        <h3>Big data</h3>
+        <ul class="tags"><li>Spark</li><li>Kafka</li><li>NiFi</li><li>MongoDB</li><li>PostgreSQL</li></ul>
+        <h3>Tools</h3>
+        <ul class="tags"><li>Microsoft 365</li><li>think-cell</li><li>Git</li></ul>
+        <h3>Advisory</h3>
+        <p class="advisory">Trusted advisor to senior HR and business leaders; account health; training and enablement.</p>
+      </div>
+    </div>
+    <div class="block">
+      <h2>Languages</h2>
+      <ul class="langs">
+        <li><span>German <small>Native</small></span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+        <li><span>English <small>Business fluent</small></span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+        <li><span>Spanish <small>Basic</small></span> <span class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span></li>
+      </ul>
+    </div>
+    <div class="block links-block">
+      <h2>Find me</h2>
+      <ul class="links">
+        <li><a href="https://www.linkedin.com/in/henning-peleikis/">linkedin.com/in/henning-peleikis</a></li>
+        <li>Berlin, Germany</li>
+      </ul>
+    </div>
+  </div>
+</aside>
+</div>
+</div>
+
+<footer><div class="wrap">Updated November 2026.</div></footer>
+</body>
+</html>
